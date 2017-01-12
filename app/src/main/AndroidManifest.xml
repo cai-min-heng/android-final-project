@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.stephen.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/beau"
+        android:label="Happy sport"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCgpQ5u5SFG2LSVYfVR4xz5uLX3PEidY38" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".aaa" />
+        <activity android:name=".bbb" />
+        <activity android:name=".notice" />
+        <activity android:name=".Clock" />
+        <activity android:name=".Tabata" />
+        <activity android:name=".tabatastart" />
+
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+        <!--
+ Main music service, provides media browsing and media playback services to
+         consumers through MediaBrowserService and MediaSession. Consumers connect to it through
+         MediaBrowser (for browsing) and MediaController (for playback control)
+        -->
+        <service
+            android:name=".MyMusicService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
